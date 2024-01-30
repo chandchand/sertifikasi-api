@@ -30,5 +30,4 @@ app.use("*", (req, res, next) => {
 
 app.listen(PORT, () => {
   console.log(`Server berjalan di port ${PORT}`);
-  console.log(`Documentasi api dengan swagger: /api/api-docs`);
 });

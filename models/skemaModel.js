@@ -24,4 +24,4 @@ const SkemaModel = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.Model("SkemaModels", SkemaModel);
+module.exports = mongoose.model("SkemaModels", SkemaModel);

@@ -29,4 +29,4 @@ const PesertaModel = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.Model("PesertaModel", PesertaModel);
+module.exports = mongoose.model("PesertaModel", PesertaModel);
