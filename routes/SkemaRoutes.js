@@ -3,10 +3,10 @@ const router = express.Router();
 
 const Skema = require("../controllers/SkemaController");
 
-router.post("/skemas", Skema.create);
+router.post("/skema", Skema.create);
 router.get("/skemas", Skema.findAll);
-router.get("/skemas/id", Skema.findOneByid);
-router.put("/skemas/id", Skema.update);
-router.delete("/skemas", Skema.delete);
+router.get("/skema/:id", Skema.findOneByid);
+router.put("/skema/:id", Skema.update);
+router.delete("/skema/:id", Skema.delete);
 
 module.exports = router;

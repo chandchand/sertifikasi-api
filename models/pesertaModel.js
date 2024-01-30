@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 const PesertaModel = new mongoose.Schema({
   Kd_skema: {
-    type: String,
+    type: mongoose.Schema.Types.ObjectId,
     required: true,
     ref: "SkemaModels",
     foreignField: "Kd_skema",

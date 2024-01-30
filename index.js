@@ -18,10 +18,10 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const skema = require("./routes/SkemaRoutes");
-const peserta = require("./routes/SkemaRoutes");
+const peserta = require("./routes/PesertaRoutes");
 
-app.use("/api/", skema);
-app.use("/api/", peserta);
+app.use("/api", skema);
+app.use("/api", peserta);
 
 app.use("*", (req, res, next) => {
   return next(new ErrorHandler("PAGE NOT FOUND", 404));

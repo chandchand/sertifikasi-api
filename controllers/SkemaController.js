@@ -22,7 +22,7 @@ exports.create = catchAsyncErrors(async (req, res, next) => {
 
     const Kd_skema = awalan + formattedNumber;
 
-    const data = await Skema.Create({
+    const data = await Skema.create({
       Kd_skema,
       Nm_skema,
       Jenis,
@@ -55,7 +55,7 @@ exports.findAll = catchAsyncErrors(async (req, res, next) => {
 exports.findOneByid = catchAsyncErrors(async (req, res, next) => {
   try {
     const id = req.params.id;
-    const data = Skema.findById(id);
+    const data = await Skema.findById(id);
 
     if (!data) {
       return next(new ErrorHandler(`Skema dengan id ${id} tidak ada.`, 404));
@@ -105,7 +105,7 @@ exports.delete = catchAsyncErrors(async (req, res, next) => {
       return next(new ErrorHandler(`Skema dengan id ${id} tidak ada.`, 404));
     }
 
-    resMsg.sendResponse(res, 200, true, "success", data);
+    resMsg.sendResponse(res, 200, true, "success data has been deleted", data);
   } catch (err) {
     res.status(500).json({ error: err.message });
     return next(new ErrorHandler("Kesalahan Server.", 500));
